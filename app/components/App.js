@@ -1,14 +1,12 @@
 import React, { Component, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import routes from '../constants/routes.json'
-import styles from './Home.css'
+import styles from './App.css'
 import FastTextInput from './FastTextInput.js'
 import {SocketProvider, useSocket} from '../hooks/useSocket.js'
 import OCR from './OCR.js'
 
-export default function Home (props) {
-  const [fromIp, setFromIp] = useState('192.168.1.20')
-  const [fromPort, setFromPort] = useState(8111) 
+export default function App (props) {
+  const [fromIp, setFromIp] = useState('192.168.1.6')
+  const [fromPort, setFromPort] = useState(8112) 
   const [toIp, setToIp] = useState('192.168.1.10')
   const [toPort, setToPort] = useState(6100) 
   return (

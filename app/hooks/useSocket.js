@@ -13,7 +13,7 @@ function SocketProvider ({ children, connection }) {
     if (connection && connection.ip && connection.port) {
       const client = new net.Socket();
       client.connect({port: connection.port, host: connection.ip}, function() {
-      });
+      })
       client.on('ready', function () {
         console.log(`Connected to ${connection.ip}:${connection.port}`)
         setSocket(client)
@@ -21,11 +21,11 @@ function SocketProvider ({ children, connection }) {
       client.on('close', function() {
         console.log(`Lost connection to ${connection.ip}:${connection.port}`)
         setSocket(null)
-      });
+      })
       client.on('error', function() {
         console.log(`Error connecting to ${connection.ip}:${connection.port}`)
         setSocket(null)
-      });
+      })
       console.log({client})
       return () => {
         console.log('unmounting')

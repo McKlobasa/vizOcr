@@ -39,7 +39,6 @@ function fastTextInput (props) {
   
   return (
     <Container>
-      <Label>{props.label}</Label>
       <Input 
         onChange={(event) => setTempText(event.target.value)}
         onBlur={(event) => props.setText(tempText)}
